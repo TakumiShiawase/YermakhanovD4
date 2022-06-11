@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %} 
+ 
+{% load custom_filters %}
+
+{% block title %}
+News Search
+{% endblock title %}
+ 
+
+{% block content %}
+{{ filter.form }}
+<h1>{{ news_id.name }}</h1>
+<h2>{{ news_id.datetime|date:'d M Y'}}</h2>
+<h3>{{ news_id.description|censor }}</h3>
+{% endblock content %}
