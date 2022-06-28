@@ -1,0 +1,14 @@
+
+{% extends 'flatpages/default.html' %} 
+ 
+
+{% block title %}
+Products
+{% endblock title %}
+ 
+
+{% block content %}
+<h1>{{ product.name }}</h1>
+<h2>{{ product.created_at|date:'d M Y'}}</h2>
+<h3>{{ product.description }}</h3>
+{% endblock content %}
