@@ -1,0 +1,23 @@
+{% extends 'flatpages/default.html' %} 
+
+{% block title %} News create {% endblock title %}
+
+{% block content %}
+<h3>Список откликов на {{ answer.user }}:</h3> <br>
+{% if user_answer %}
+    {% for adv_reply in adv_replies %}
+        <p>{{ adv_reply.text }}</p>
+        <i>
+            {{ adv_reply.created_reply }} by {{ adv_reply.user.username }}
+            <a href="{% url 'take_reply' advert.id adv_reply.id %}">Принять</a>
+            <a href="{% url 'delete_reply' advert.id adv_reply.id %}">Удалить</a>
+        </i>
+        {% block adv_reply %}
+        {% endblock %}
+        <br><br>
+    {% endfor %}
+{% else %}
+    <br>
+    Откликов нет!<br>
+{% endif %}
+{% endblock content %}

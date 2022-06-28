@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Make an appoinment</h1>
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="client_name">Yoar name</label>
+        <input type="text" name="client_name"><br>
+        <label for="message">short</label>
+        <input type="text" name="message"><br>
+        <label for="date">time</label>
+        <input type="date" name="date">
+        <input type="submit">
+    </form>
+</body>
+</html>

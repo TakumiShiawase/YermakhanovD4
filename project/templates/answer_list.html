@@ -1,0 +1,17 @@
+{% extends 'flatpages/default.html' %} 
+
+{% block title %} News create {% endblock title %}
+
+{% block content %}
+{% if answer_list %}
+    {% for answer in answer_list %}
+    <table>
+        {{  answer.user }}
+        {{ answer.text }}
+        {{ answer.created }}
+    </table>    
+    {% endfor %}
+{% else %}
+ <h3>Нет откликов</h3>
+ {% endif %}
+{% endblock content %}

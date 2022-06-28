@@ -58,7 +58,13 @@ class Category(models.Model):
     def __str__(self):
         return f'{self.name.title()}'
 
+class Answer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='replies')
+    text = models.TextField()
+    news = models.ForeignKey(News, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    taken = models.BooleanField(default=False)
 
-
-
+    def __str__(self) -> str:
+        return f'Answer by {self.user} on {self.news}'
 

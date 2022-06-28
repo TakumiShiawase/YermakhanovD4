@@ -10,9 +10,9 @@ News delete
 {% block content %}
 <h2>Вы действительно хотите удалить новость?</h2>
 <table>
-    <h1>{{ news_id.name }}</h1>
-    <h2>{{ news_id.datetime|date:'d M Y'}}</h2>
-    <h3>{{ news_id.description|censor }}</h3>
+    <h1>{{ news.name }}</h1>
+    <h2>{{ news.datetime|date:'d M Y'}}</h2>
+    <h3>{{ news.description|censor }}</h3>
 </table>
 <form method="POST">
     {% csrf_token %}

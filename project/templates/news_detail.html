@@ -9,8 +9,11 @@ News detail
 
 {% block content %}
 <table>
-    <td>{{ news_id.name }}</td>
-    <td>{{ news_id.datetime|date:'d M Y'}}</td>
-    <td>{{ news_id.description|censor }}</td>
+    <td>{{ news.name }}</td>
+    <td>{{ news.datetime|date:'d M Y'}}</td>
+    <td>{{ news.description|censor }}</td>
 </table>
+<h3>Отклики</h3>
+<button><a href="{% url 'answer_list' %}">Все отклики</a></button>
+<button><a href="{% url 'answer_create' %}">Оставить отклик</a></button>
 {% endblock content %}

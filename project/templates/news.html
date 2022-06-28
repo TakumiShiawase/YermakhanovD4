@@ -23,11 +23,11 @@ News
     {% for news_id in filter.qs %}
     <tr>
         <td>
-            <a href="{% url 'news_detail' news.id %}">{{ news_id.name|title }}</a>
+            <a href="{% url 'news_detail' news_id.id %}">{{ news_id.name|title }}</a>
 
-            <a href="{% url 'news_update' news.id %}"><u>Редактировать</u></a>
+            <a href="{% url 'news_update' news_id.id %}"><u>Редактировать</u></a>
                         
-            <a href="{% url 'news_delete' news.id %}"><u> Удалить </u></a>
+            <a href="{% url 'news_delete' news_id.id %}"><u> Удалить </u></a>
         </td>
         <td>
             {{ news_id.datetime|date:'d M Y' }}
@@ -39,7 +39,7 @@ News
     {% endfor %}
 </table>
 
-<a href="{% url 'news_create' %}">Добавить новость</a> <br>
+<button><a href="{% url 'news_create' %}">Добавить новость</a></button> <br>
 
 {% if is_paginated %}
             {% if page_obj.has_previous %}
@@ -61,4 +61,5 @@ News
         {% endif %}
     {% endif %}
     <br>
+
 {% endblock content %}
